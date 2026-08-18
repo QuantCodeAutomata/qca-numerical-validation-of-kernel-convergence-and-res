@@ -1,0 +1,22 @@
+Parameters: mu=0.4000, zeta=0.4701
+Check: sqrt(rho^2+zeta^2)*mu = 0.3310  (target 0.331)
+
+Simulating paths …
+  alpha=0.999: H≈0.516, incr_std=0.0009, qv=0.0045  [0.1s]
+  alpha=0.62: H≈0.353, incr_std=0.0096, qv=0.4649  [0.1s]
+  alpha=0.501: H≈0.298, incr_std=0.0187, qv=1.7392  [0.2s]
+
+Generating Figure 1 (sigma paths) …
+  Saved results/figures/exp2_sigma_paths.png
+Generating Figure 2 (log-vol paths) …
+  Saved results/figures/exp2_logvol_paths.png
+Generating Figure 3 (roughness diagnostics) …
+  Saved results/figures/exp2_roughness_diagnostics.png
+
+Saved results/exp2_volatility_paths.csv
+
+=== Roughness Summary Table ===
+ alpha  incr_std  quad_variation     acf_1     acf_5    acf_10  hoelder_exponent
+ 0.999  0.000950        0.004537  0.035512  0.003160 -0.017837          0.515978
+ 0.620  0.009644        0.464904 -0.110016 -0.024157 -0.024397          0.352953
+ 0.501  0.018652        1.739155 -0.161691 -0.021613 -0.020442          0.298236

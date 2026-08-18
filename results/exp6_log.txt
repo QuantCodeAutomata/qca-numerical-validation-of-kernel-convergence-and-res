@@ -1,0 +1,31 @@
+======================================================================
+Experiment 6: FFT-Accelerated vs Direct Simulation Benchmark
+  alpha=0.62, n_reps=5, n_values=[100, 250, 500, 1000, 2500, 5000]
+  Platform: Linux-6.6.144.1-1.azl3-x86_64-with-glibc2.41
+  Python:   3.12.13, NumPy: 1.26.4
+======================================================================
+[compute_phi_sequence] Warning: sum of 100 phi weights = 0.975542 (deviation from 1 exceeds 1 %).
+[compute_phi_sequence] Warning: sum of 250 phi weights = 0.986091 (deviation from 1 exceeds 1 %).
+
+Benchmark completed in 0.4s
+
+     n |   Direct (s) |      FFT (s) |  Speedup |    Max|diff|
+------------------------------------------------------------
+   100 |     0.0005±0.0000 |     0.0000±0.0000 |    14.30× |     2.78e-16
+   250 |     0.0006±0.0000 |     0.0000±0.0000 |    25.53× |     6.66e-16
+   500 |     0.0017±0.0004 |     0.0000±0.0000 |    35.07× |     1.22e-15
+  1000 |     0.0046±0.0002 |     0.0001±0.0000 |    52.07× |     1.78e-15
+  2500 |     0.0119±0.0023 |     0.0003±0.0000 |    36.80× |     5.33e-15
+  5000 |     0.0302±0.0042 |     0.0006±0.0001 |    53.62× |     1.78e-14
+
+Saved: /workspace/project/results/exp6_fft_benchmark.csv
+Saved: /workspace/project/results/exp6_fft_benchmark.png
+
+Max speedup: 53.62× at n=5000
+Numerical equivalence (max|direct − fft|):
+  n=100: 2.78e-16  ✓ OK
+  n=250: 6.66e-16  ✓ OK
+  n=500: 1.22e-15  ✓ OK
+  n=1000: 1.78e-15  ✓ OK
+  n=2500: 5.33e-15  ✓ OK
+  n=5000: 1.78e-14  ✓ OK

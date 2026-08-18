@@ -1,0 +1,65 @@
+======================================================================
+Experiment 5: ATM Implied-Vol Skew Power-Law Analysis
+  M_half=25000 (antithetic → effective 50000), N_per_year=500
+  Maturities: [0.01923077 0.03846154 0.08333333 0.16666667 0.25       0.5
+ 0.75       1.        ]
+  K_GRID: [-0.05  -0.025 -0.01   0.01   0.025  0.05 ]
+  Skew estimator: local OLS regression of IV on k
+======================================================================
+
+>>> alpha = 0.999
+    tau=0.0192  psi=0.0140  n_valid_iv=6  [0.1s]
+    tau=0.0385  psi=0.0130  n_valid_iv=6  [0.1s]
+    tau=0.0833  psi=0.0144  n_valid_iv=6  [0.3s]
+    tau=0.1667  psi=0.0140  n_valid_iv=6  [0.9s]
+    tau=0.2500  psi=0.0153  n_valid_iv=6  [1.6s]
+    tau=0.5000  psi=0.0140  n_valid_iv=6  [5.0s]
+    tau=0.7500  psi=0.0118  n_valid_iv=6  [12.2s]
+    tau=1.0000  psi=0.0146  n_valid_iv=6  [20.8s]
+  Power-law slope b=-0.0033, R²=0.0036
+
+>>> alpha = 0.62
+[compute_phi_sequence] Warning: sum of 10 phi weights = 0.903296 (deviation from 1 exceeds 1 %).
+    tau=0.0192  psi=0.0585  n_valid_iv=6  [0.1s]
+[compute_phi_sequence] Warning: sum of 20 phi weights = 0.935236 (deviation from 1 exceeds 1 %).
+    tau=0.0385  psi=0.0553  n_valid_iv=6  [0.1s]
+[compute_phi_sequence] Warning: sum of 42 phi weights = 0.958470 (deviation from 1 exceeds 1 %).
+    tau=0.0833  psi=0.0443  n_valid_iv=6  [0.3s]
+[compute_phi_sequence] Warning: sum of 84 phi weights = 0.972781 (deviation from 1 exceeds 1 %).
+    tau=0.1667  psi=0.0366  n_valid_iv=6  [0.8s]
+[compute_phi_sequence] Warning: sum of 125 phi weights = 0.978676 (deviation from 1 exceeds 1 %).
+    tau=0.2500  psi=0.0287  n_valid_iv=6  [1.5s]
+[compute_phi_sequence] Warning: sum of 250 phi weights = 0.986091 (deviation from 1 exceeds 1 %).
+    tau=0.5000  psi=0.0269  n_valid_iv=6  [5.3s]
+[compute_phi_sequence] Warning: sum of 375 phi weights = 0.989173 (deviation from 1 exceeds 1 %).
+    tau=0.7500  psi=0.0191  n_valid_iv=6  [11.7s]
+    tau=1.0000  psi=0.0162  n_valid_iv=6  [20.4s]
+  Power-law slope b=-0.3243, R²=0.9504
+
+>>> alpha = 0.501
+[compute_phi_sequence] Warning: sum of 10 phi weights = 0.830631 (deviation from 1 exceeds 1 %).
+    tau=0.0192  psi=0.0967  n_valid_iv=6  [0.1s]
+[compute_phi_sequence] Warning: sum of 20 phi weights = 0.877499 (deviation from 1 exceeds 1 %).
+    tau=0.0385  psi=0.0833  n_valid_iv=6  [0.1s]
+[compute_phi_sequence] Warning: sum of 42 phi weights = 0.914453 (deviation from 1 exceeds 1 %).
+    tau=0.0833  psi=0.0615  n_valid_iv=6  [0.3s]
+[compute_phi_sequence] Warning: sum of 84 phi weights = 0.939196 (deviation from 1 exceeds 1 %).
+    tau=0.1667  psi=0.0428  n_valid_iv=6  [0.8s]
+[compute_phi_sequence] Warning: sum of 125 phi weights = 0.950079 (deviation from 1 exceeds 1 %).
+    tau=0.2500  psi=0.0397  n_valid_iv=6  [1.6s]
+[compute_phi_sequence] Warning: sum of 250 phi weights = 0.964654 (deviation from 1 exceeds 1 %).
+    tau=0.5000  psi=0.0280  n_valid_iv=6  [5.2s]
+[compute_phi_sequence] Warning: sum of 375 phi weights = 0.971133 (deviation from 1 exceeds 1 %).
+    tau=0.7500  psi=0.0216  n_valid_iv=6  [11.1s]
+[compute_phi_sequence] Warning: sum of 500 phi weights = 0.974999 (deviation from 1 exceeds 1 %).
+    tau=1.0000  psi=0.0205  n_valid_iv=6  [20.5s]
+  Power-law slope b=-0.4128, R²=0.9892
+
+Saved: /workspace/project/results/exp5_atm_skew.csv
+Saved: /workspace/project/results/exp5_powerlaw_regression.csv
+Saved: /workspace/project/results/exp5_atm_skew.png
+
+--- Power-Law Regression Summary ---
+  α=0.999: slope=-0.0033, R²=0.0036, p=0.8871
+  α=0.62: slope=-0.3243, R²=0.9504, p=0.0000
+  α=0.501: slope=-0.4128, R²=0.9892, p=0.0000
